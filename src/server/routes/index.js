@@ -60,7 +60,12 @@ router.use("/", async (_, res) => {
   const templatePath = path.resolve(__dirname, "index.html");
   const template = fs.readFileSync(templatePath, "utf8");
 
-  res.send(template.replace('<div id="root"></div>', `<div id="root">${renderedApp}</div>`));
+  res.send(
+    template.replace(
+      '<div id="root"></div>',
+      `<div id="root">${renderedApp}</div>`
+    )
+  );
 });
 
 export default router;
